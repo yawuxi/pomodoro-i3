@@ -1,9 +1,9 @@
 #! /usr/bin/bash
 
-pomodoro_data_persistant_directory_path="/usr/share/pomodoro-i3";
+pomodoro_data_persistant_directory_path="$HOME/.local/share/pomodoro-i3";
 pomodoro_data_persistant_file_path="$pomodoro_data_persistant_directory_path/pomodoro-data";
-pomodoro_data_tmp_directory_path="/tmp/.pomodoro";
-pomodoro_data_tmp_file_path="$pomodoro_data_tmp_directory_path/pomodoro";
+pomodoro_data_tmp_directory_path="/tmp/pomodoro-i3";
+pomodoro_data_tmp_file_path="$pomodoro_data_tmp_directory_path/pomodoro-data";
 
 pomodoro_config_directory_path="$HOME/.config/pomodoro-i3";
 pomodoro_config_file_path="$pomodoro_config_directory_path/config";
