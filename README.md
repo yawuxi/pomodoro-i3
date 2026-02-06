@@ -17,7 +17,7 @@ Download and run the provided installation script from the repository with the p
 Replace the path after -c with your actual i3blocks configuration file path before running the command.
 
 ```bash
-curl -o pomodoro-i3-install.sh https://github.com/yawuxi/pomodoro-i3/blob/main/install.sh && \
+curl -o pomodoro-i3-install.sh https://raw.githubusercontent.com/yawuxi/pomodoro-i3/refs/heads/main/install.sh && \
 ./pomodoro-i3-install.sh -c "/home/USER/.config/i3/i3blocks.conf"
 ```
 
