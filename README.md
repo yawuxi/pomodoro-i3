@@ -18,6 +18,7 @@ Replace the path after -c with your actual i3blocks configuration file path befo
 
 ```bash
 curl -o pomodoro-i3-install.sh https://raw.githubusercontent.com/yawuxi/pomodoro-i3/refs/heads/main/install.sh && \
+chmod +x ./pomodoro-i3-install.sh && \
 ./pomodoro-i3-install.sh -c "/home/USER/.config/i3/i3blocks.conf"
 ```
 
