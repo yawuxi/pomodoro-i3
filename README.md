@@ -1,10 +1,10 @@
 # Pomodoro Block
-A lightweight Pomodoro timer **block for i3blocks** with simple mouse-based controls and minimal configuration.
+A lightweight Pomodoro timer **block for i3blocks** with simple mouse-based controls and configuration.
 
 ## Features
 - Simple to use.
 - Desktop notifications.
-- Easily configurable (Every variable can be changed).
+- Easily configurable (Each variable can be changed).
 - Installation script for easy setup.
 
 ## Purpose
