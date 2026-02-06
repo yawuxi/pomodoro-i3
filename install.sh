@@ -6,7 +6,7 @@ pomodoro_data_tmp_directory_path="/tmp/.pomodoro";
 pomodoro_data_tmp_file_path="$pomodoro_data_tmp_directory_path/pomodoro";
 pomodoro_data_tmp_link="https://raw.githubusercontent.com/yawuxi/pomodoro-i3/refs/heads/main/pomodoro-data";
 pomodoro_data_i3block_script_file_path="$pomodoro_data_persistant_directory_path/pomodoro-i3.sh";
-pomodoro_data_i3block_script_link="";
+pomodoro_data_i3block_script_link="https://raw.githubusercontent.com/yawuxi/pomodoro-i3/refs/heads/main/pomodoro-i3.sh";
 
 pomodoro_config_directory_path="$HOME/.config/pomodoro-i3";
 pomodoro_config_file_path="$pomodoro_config_directory_path/config";
