@@ -1,0 +1,3 @@
+[pomodoro]
+command=POMODORO_COMMAND
+interval=1
