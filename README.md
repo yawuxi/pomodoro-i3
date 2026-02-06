@@ -10,6 +10,10 @@ A lightweight Pomodoro timer **block for i3blocks** with simple mouse-based cont
 ## Purpose
 This project is designed for users who want a simple, fast, and distraction-free Pomodoro tool without a complex interface or unnecessary features.
 
+<video src="https://github.com/yawuxi/pomodoro-i3/raw/refs/heads/main/pomodoro-i3-preview.mp4" controls width="100%">
+    Your browser does not support the video tag.
+</video>
+
 ## Installation
 Download and run the provided installation script from the repository with the path to your i3blocks configuration file. The script will automatically:
 - Check and install dependencies (libnotify) if needed
