@@ -30,6 +30,9 @@ if [[ -z "$i3blocks_config_file_path" ]]; then
   printf "Usage: %s [-c absolute or relative config file path]\n" $0; exit 2;
 fi
 
+# Installing dependencies
+sudo pacman -S libnotify
+
 # Initializing configuration and data files
 # Creating and fetching user configuration directory and file
 mkdir -p "$pomodoro_config_directory_path";
