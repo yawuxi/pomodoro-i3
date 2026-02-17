@@ -1,5 +1,8 @@
+is_started=0
 start_time=0
 end_time=0
+is_paused=0
+pause_time=0
+is_short_brake=0
+is_long_brake=0
 cycle_count=0
-short_brake=0
-long_brake=0
