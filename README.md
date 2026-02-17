@@ -3,7 +3,7 @@ A lightweight Pomodoro timer **block for i3blocks** with simple mouse-based cont
 
 ## Features
 - Simple to use.
-- Desktop notifications.
+- Desktop notifications. (Sound notification in future)
 - Easily configurable (Each variable can be changed).
 - Installation script for easy setup.
 
@@ -30,8 +30,9 @@ chmod +x ./pomodoro-i3-install.sh && \
 ```
 
 ## Usage
-- Click **left mouse button** to begin your Pomodoro session.
+- Click **left mouse button** to begin your Pomodoro session, or unpause timer.
 - Click **right mouse button** if you need to completely reset the timer and start fresh with default settings.
+- Click **middle mouse button** if you need to pause the timer (You also can pause short/long brake).
 
 
 ## Dependencies
