@@ -3,7 +3,7 @@ A lightweight Pomodoro timer **block for i3blocks** with simple mouse-based cont
 
 ## Features
 - Simple to use.
-- Desktop notifications. (Sound notification in future)
+- Desktop notifications. (Sound notification with ALSA)
 - Easily configurable (Each variable can be changed).
 - Installation script for easy setup.
 
