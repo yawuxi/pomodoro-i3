@@ -60,5 +60,5 @@ fi
 
 echo "Uninstallation completed successfully!"
 echo ""
-echo "Note: libnotify package was not removed as it may be used by other applications."
-echo "If you want to remove it manually, run: sudo pacman -R libnotify"
+echo "Note: Installed dependencies are not removed as it may be used by other applications."
+echo "If you want to remove them, do it manually."

@@ -34,16 +34,16 @@ fi
 echo 'Installing necessary dependencies';
 
 if ! command -v notify-send &> /dev/null; then
-  echo "libnotify is required but not installed."
-  echo "Installing libnotify..."
-  sudo pacman -S --noconfirm libnotify
+  echo "Required dependencies not installed."
+  echo "Installing dependencies..."
+  sudo pacman -S --noconfirm libnotify alsa-utils
 
   if [ $? -ne 0 ]; then
-    echo "Failed to install libnotify. Please install it manually: sudo pacman -S libnotify"
+    echo "Failed to install dependencies. Please install them manually."
     exit 1
   fi
 else                                                                                                           
-  echo 'libnotify is already installed.'
+  echo 'Dependencies is already installed.'
 fi
 
 # Initializing configuration, data files and i3block script

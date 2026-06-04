@@ -38,6 +38,7 @@ chmod +x ./pomodoro-i3-install.sh && \
 ## Dependencies
 - `i3blocks` — this script works only with i3blocks for i3bar.
 - `libnotify` — used for desktop notifications. The installation script will automatically check and install it if needed.
+- `alsa-utils` — used for sound notifications. The installation script will automatically check and install it if needed.
 
 ## Uninstallation
 To completely remove pomodoro-i3 and all related files, download and run the uninstall script. It will:
@@ -47,7 +48,7 @@ To completely remove pomodoro-i3 and all related files, download and run the uni
 - Remove the pomodoro block from your i3blocks config (creates a backup first)
 - Restart i3
 
-**Note:** The `libnotify` package will not be removed as it may be used by other applications.
+**Note:** Installed dependencies will not be removed as it may be used by other applications.
 
 ```bash
 curl -o pomodoro-i3-uninstall.sh https://raw.githubusercontent.com/yawuxi/pomodoro-i3/refs/heads/main/uninstall.sh && \
