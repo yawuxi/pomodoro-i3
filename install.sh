@@ -36,7 +36,7 @@ echo 'Installing necessary dependencies';
 if ! command -v notify-send &> /dev/null; then
   echo "Required dependencies not installed."
   echo "Installing dependencies..."
-  sudo pacman -S --noconfirm libnotify alsa-utils
+  sudo pacman -S --noconfirm libnotify libpulse
 
   if [ $? -ne 0 ]; then
     echo "Failed to install dependencies. Please install them manually."

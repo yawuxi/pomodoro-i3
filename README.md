@@ -3,7 +3,8 @@ A lightweight Pomodoro timer **block for i3blocks** with simple mouse-based cont
 
 ## Features
 - Simple to use.
-- Desktop notifications. (Sound notification with ALSA)
+- Desktop notifications. (Sound notification with libnotify)
+- Sound notifications. (Sound notification with PulseAudio)
 - Easily configurable (Each variable can be changed).
 - Installation script for easy setup.
 
@@ -14,7 +15,7 @@ https://github.com/user-attachments/assets/828da1c6-817a-4315-87e1-e04ed947c86c
 
 ## Installation
 Download and run the provided installation script from the repository with the path to your i3blocks configuration file. The script will automatically:
-- Check and install dependencies (libnotify) if needed
+- Check and install dependencies if needed
 - Place all required files in user directories (`~/.local/share` and `~/.config`)
 - Configure your i3blocks
 
@@ -38,7 +39,7 @@ chmod +x ./pomodoro-i3-install.sh && \
 ## Dependencies
 - `i3blocks` — this script works only with i3blocks for i3bar.
 - `libnotify` — used for desktop notifications. The installation script will automatically check and install it if needed.
-- `alsa-utils` — used for sound notifications. The installation script will automatically check and install it if needed.
+- `libpulse` — used for sound notifications. The installation script will automatically check and install it if needed.
 
 ## Uninstallation
 To completely remove pomodoro-i3 and all related files, download and run the uninstall script. It will:

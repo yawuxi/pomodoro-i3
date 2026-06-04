@@ -99,7 +99,7 @@ function play_sound() {
     $sound_effects_volume = 100;
   fi
 
-  aplay --volume $(( $sound_effects_volume * $paplay_volume_coefficient )) $1;
+  paplay --volume $(( $sound_effects_volume * $paplay_volume_coefficient )) $1;
 }
 
 #Listening to mouse events
