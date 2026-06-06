@@ -138,7 +138,7 @@ case "${BLOCK_BUTTON:-0}" in
       play_sound $pause_sound;
     fi
   };;
-  # Stopping timer
+  # Reset timer
   3) {
       sed -i "s/is_started=[0-9]\+/is_started=0/" "$pomodoro_data_tmp_file_path";
       sed -i "s/start_time=[0-9]\+/start_time=0/" "$pomodoro_data_tmp_file_path";
@@ -148,6 +148,10 @@ case "${BLOCK_BUTTON:-0}" in
       sed -i "s/cycle_count=[0-9]\+/cycle_count=0/" "$pomodoro_data_tmp_file_path";
       sed -i "s/is_short_brake=[0-9]\+/is_short_brake=0/" "$pomodoro_data_tmp_file_path";
       sed -i "s/is_long_brake=[0-9]\+/is_long_brake=0/" "$pomodoro_data_tmp_file_path";
+
+      if [[ $sound_effects_on_timer_reset -eq 1 ]]; then
+        play_sound $reset_sound;
+      fi
   };;
 esac
 
