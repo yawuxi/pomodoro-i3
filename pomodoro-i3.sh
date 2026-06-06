@@ -99,7 +99,9 @@ function play_sound() {
     $sound_effects_volume = 100;
   fi
 
-  paplay --volume $(( $sound_effects_volume * $paplay_volume_coefficient )) $1;
+  if [[ $sound_effects_on -eq 1 ]]; then
+    paplay --volume $(( $sound_effects_volume * $paplay_volume_coefficient )) $1;
+  fi
 }
 
 #Listening to mouse events
@@ -119,13 +121,21 @@ case "${BLOCK_BUTTON:-0}" in
       sed -i "s/is_started=[0-9]\+/is_started=1/" "$pomodoro_data_tmp_file_path";
       sed -i "s/end_time=[0-9]\+/end_time=$(( $(get_current_cycle_end_time) + $pause_duration ))/" "$pomodoro_data_tmp_file_path";
     fi
+
+    if [[ $sound_effects_on_timer_start -eq 1 ]]; then
+      play_sound $work_time_sound;
+    fi
   };;
-  # Pausing/Unpausing timer
+  # Pausing timer
   2) {
     if [[ $(is_paused) -eq 0 ]]; then
       sed -i "s/is_paused=[0-9]\+/is_paused=1/" "$pomodoro_data_tmp_file_path";
       sed -i "s/pause_time=[0-9]\+/pause_time=$(get_current_time)/" "$pomodoro_data_tmp_file_path";
       sed -i "s/is_started=[0-9]\+/is_started=0/" "$pomodoro_data_tmp_file_path";
+    fi
+
+    if [[ $sound_effects_on_timer_pause -eq 1 ]]; then
+      play_sound $pause_sound;
     fi
   };;
   # Stopping timer
@@ -150,10 +160,7 @@ if [[ $(get_current_time) -eq $(get_current_cycle_end_time) && $(is_paused) -eq 
   if [[ $(( $(get_cycle_counts) % "$cycle_counts" )) -gt 0 ]]; then
     sed -i "s/is_short_brake=0\+/is_short_brake=1/" "$pomodoro_data_tmp_file_path";
 
-    if [[ $sound_effects_on -eq 1 ]]; then
-      play_sound $short_brake_sound;
-    fi;
-
+    play_sound $short_brake_sound;
     notify-send "$short_brake_start_message";
   fi
 
@@ -161,10 +168,7 @@ if [[ $(get_current_time) -eq $(get_current_cycle_end_time) && $(is_paused) -eq 
   if [[ $(( $(get_cycle_counts) % "$cycle_counts" )) -eq 0 ]]; then
     sed -i "s/is_long_brake=0\+/is_long_brake=1/" "$pomodoro_data_tmp_file_path";
 
-    if [[ $sound_effects_on -eq 1 ]]; then
-      play_sound $long_brake_sound;
-    fi;
-
+    play_sound $long_brake_sound;
     notify-send "$long_brake_start_message";
   fi
 fi
@@ -175,10 +179,7 @@ if [[ ( $(( $(get_current_cycle_short_brake_end_time) - $(get_current_time) )) -
   sed -i "s/start_time=[0-9]\+/start_time=$(get_current_time)/" "$pomodoro_data_tmp_file_path";
   sed -i "s/end_time=[0-9]\+/end_time=$(( $(get_current_time) + $work_time_seconds ))/" "$pomodoro_data_tmp_file_path";
 
-  if [[ $sound_effects_on -eq 1 ]]; then
-    play_sound $work_time_sound;
-  fi;
-
+  play_sound $work_time_sound;
   notify-send "$short_brake_end_message";
 fi
 
@@ -188,10 +189,7 @@ if [[ ( $(( $(get_current_cycle_long_brake_end_time) - $(get_current_time) )) -e
   sed -i "s/start_time=[0-9]\+/start_time=$(get_current_time)/" "$pomodoro_data_tmp_file_path";
   sed -i "s/end_time=[0-9]\+/end_time=$(( $(get_current_time) + $work_time_seconds ))/" "$pomodoro_data_tmp_file_path";
 
-  if [[ $sound_effects_on -eq 1 ]]; then
-    play_sound $work_time_sound;
-  fi;
-
+  play_sound $work_time_sound;
   notify-send "$long_brake_end_message";
 fi
 
